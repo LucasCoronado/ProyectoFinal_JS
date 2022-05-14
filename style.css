@@ -5,3 +5,72 @@ footer img {
 nav div img {
     width: 25px;
 }
+
+/* Productos */
+.tarjetasProductos {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: cuadricula;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 3rem; }
+  
+  .tarjetasProductos div {
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 5px; }
+  
+  @media (min-width: 768px) {
+    .tarjetasProductos div {
+      width: 360px;
+      margin-inline: 40px;
+      margin-block: 40px; } }
+  
+  .tarjetasProductos div:hover {
+    -webkit-box-shadow: 10px 10px 50px #143245; }
+  
+  .tarjetasProductos div:hover h2 {
+    color: #212529; }
+  
+  .tarjetasProductos img {
+    width: 70vw;
+    height: 350px;
+    border-radius: 5px; }
+  
+  @media (min-width: 768px) {
+    .tarjetasProductos img {
+      width: 360px;
+      max-height: 200px; } }
+  
+  .tarjetasProductos h3 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 0.6rem;
+    color: #212529;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-left: 1rem; }
+  
+  .tarjetasProductos h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #f3a544;
+    padding-left: 1rem; }
+
+  .tarjetasProductos span {
+      display: flex;
+      justify-content: center;
+  }  
