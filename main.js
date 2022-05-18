@@ -22,6 +22,7 @@ const items = document.getElementById('lista')
 
 items.addEventListener('click', e => {
     addCarrito(e)
+    actCarrito()
 })
 
 const addCarrito = e => {
@@ -34,20 +35,42 @@ const addCarrito = e => {
 
 let carrito = {}
 
-const setCarrito = objeto => {
+const setCarrito = objCarrito => {
 
-    const producto = {
-        id: objeto.querySelector('button').id,
-        title: objeto.querySelector('h3').textContent,
-        precio: objeto.querySelector('h2').textContent,
+    const prodCarrito = {
+        id: objCarrito.querySelector('button').id,
+        nombre: objCarrito.querySelector('h3').textContent,
+        precio: objCarrito.querySelector('h2').textContent,
         cantidad: 1
     }
 
-    if (carrito.hasOwnProperty(producto.id)) {
-        producto.cantidad = carrito[producto.id].cantidad + 1
+    if (carrito.hasOwnProperty(prodCarrito.id)) {
+        prodCarrito.cantidad = carrito[prodCarrito.id].cantidad + 1
     }
 
-    carrito[producto.id] = { ...producto }
+    carrito[prodCarrito.id] = { ...prodCarrito }
 
     console.log(carrito);
 }
+
+
+
+
+const contenedorCarrito = document.getElementById('contenedorCarrito')
+
+const actCarrito = () => {
+    contenedorCarrito.innerHTML = ""
+
+    Object.values(carrito).forEach(prodCarrito =>{
+        const div  = document.createElement('div')
+        div.className = ('estiloCarrito')
+        div.innerHTML = `
+                        <div class="nombreP">${prodCarrito.nombre}</div>
+                        <div class="cantidadP">${prodCarrito.cantidad}</div>
+                        <div class="precioP">${prodCarrito.precio*prodCarrito.cantidad}</div>
+
+        `
+        contenedorCarrito.appendChild(div)
+    })
+}
+
