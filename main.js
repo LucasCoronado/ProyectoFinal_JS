@@ -23,6 +23,7 @@ const items = document.getElementById('lista')
 items.addEventListener('click', e => {
     addCarrito(e)
     actCarrito()
+    OcultarMensaje()
 })
 
 const addCarrito = e => {
@@ -68,9 +69,26 @@ const actCarrito = () => {
                         <div class="nombreP">${prodCarrito.nombre}</div>
                         <div class="cantidadP">${prodCarrito.cantidad}</div>
                         <div class="precioP">${prodCarrito.precio*prodCarrito.cantidad}</div>
-
+                        
+                        
         `
         contenedorCarrito.appendChild(div)
     })
 }
 
+const mensaje = document.getElementById('carritoVacio')
+const ocultar = document.getElementById('ocultarPlantilla')
+const OcultarMensaje = () => {
+    mensaje.className = ('carritoVacio')
+    ocultar.className = ('')
+}
+
+const BtnVaciar = document.getElementById('btnVaciar')
+BtnVaciar.addEventListener('click', () => {
+    carrito = {}
+    actCarrito()
+})
+
+const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+
+console.log(nPrecio);

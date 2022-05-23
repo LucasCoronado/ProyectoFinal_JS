@@ -51,30 +51,33 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body" id="carrito">
-
-                <div class="carritoTitulos">
-                    <div>
-                        <h4>Producto</h4>
+                <p id="carritoVacio">Actualmente el carrito esta vacio</p>
+                <span id="ocultarPlantilla" class="ocultarPlantilla">
+                    <div class="carritoTitulos carritoNone">
+                        <div>
+                            <h4>Producto</h4>
+                        </div>
+                        <div>
+                            <h4>Cantidad</h4>
+                        </div>
+                        <div>
+                            <h4>Precio</h4>
+                        </div>
                     </div>
-                    <div>
-                        <h4>Cantidad</h4>
-                    </div>
-                    <div>
-                        <h4>Precio</h4>
-                    </div>
-                </div>
-                <span id="contenedorCarrito">
-                    <div class="estiloCarrito">
+                    <span id="contenedorCarrito">
+                        <div class="estiloCarrito">
 
+                        </div>
+                    </span>
+
+                    <div id="precioTotal"> Precio total </div>
+
+                    <div class="botonCarrito">
+                        <button type="button" class="btn btn-danger" id="btnVaciar">Vaciar carrito</button>
+                        <button type="button" class="btn btn-primary" id="btnFinalizar">Finalizar compra</button>
                     </div>
-                </span>
-
-
-                <div class="botonCarrito">
-                    <button type="button" class="btn btn-danger" id="btnVaciar">Vaciar carrito</button>
-                    <button type="button" class="btn btn-primary" id="btnFinalizar">Finalizar compra</button>
-                </div>
             </div>
+            </span>
         </div>
 
     </header>
@@ -112,7 +115,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
 </body>
 
