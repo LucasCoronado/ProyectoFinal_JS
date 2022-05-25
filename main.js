@@ -18,12 +18,21 @@ fetch("./productos.json")
         });
     });
 
+
+let carrito = {}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        actCarrito()
+    }
+})
+
 const items = document.getElementById('lista')
 
 items.addEventListener('click', e => {
     addCarrito(e)
     actCarrito()
-    OcultarMensaje()
 })
 
 const addCarrito = e => {
@@ -33,8 +42,6 @@ const addCarrito = e => {
     }
     e.stopPropagation()
 }
-
-let carrito = {}
 
 const setCarrito = objCarrito => {
 
@@ -62,22 +69,26 @@ const contenedorCarrito = document.getElementById('contenedorCarrito')
 const actCarrito = () => {
     contenedorCarrito.innerHTML = ""
 
-    Object.values(carrito).forEach(prodCarrito =>{
-        const div  = document.createElement('div')
+    Object.values(carrito).forEach(prodCarrito => {
+        const div = document.createElement('div')
         div.className = ('estiloCarrito')
         div.innerHTML = `
                         <div class="nombreP">${prodCarrito.nombre}</div>
                         <div class="cantidadP">${prodCarrito.cantidad}</div>
-                        <div class="precioP">${prodCarrito.precio*prodCarrito.cantidad}</div>
+                        <div class="precioP">${prodCarrito.precio * prodCarrito.cantidad}</div>
                         
                         
         `
         contenedorCarrito.appendChild(div)
+
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+        OcultarMensaje()
     })
 }
 
 const mensaje = document.getElementById('carritoVacio')
 const ocultar = document.getElementById('ocultarPlantilla')
+
 const OcultarMensaje = () => {
     mensaje.className = ('carritoVacio')
     ocultar.className = ('')
@@ -87,8 +98,10 @@ const BtnVaciar = document.getElementById('btnVaciar')
 BtnVaciar.addEventListener('click', () => {
     carrito = {}
     actCarrito()
+    localStorage.removeItem('carrito')
+    mensaje.className = ('')
+    ocultar.className = ('ocultarPlantilla')
 })
 
-const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
 
-console.log(nPrecio);
+
