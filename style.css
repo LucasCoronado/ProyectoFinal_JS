@@ -160,3 +160,61 @@ nav div img {
   text-decoration: none;
   color: #ffffff;
 }
+
+/* Modal */
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalDiv {
+    position: relative;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+}
+
+.modal-active .modalDiv {
+    margin-top: 0;
+}
+
+.modalDiv h3 {
+    color: royalblue;
+    padding-bottom: 5px;
+}
+.modalDiv #btnCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: royalblue;
+    border: none;
+    background-color: white;
+}
+.modalDiv #btnCerrar:hover {
+    cursor: pointer;
+}
+.modalDiv #btnCerrar:focus {
+    outline: none;
+}
+.modalDiv .precioProducto {
+    padding-top: 10px;
+    
+}
