@@ -1,3 +1,12 @@
+let carrito = {}
+const items = document.getElementById('lista')
+const contenedorCarrito = document.getElementById('contenedorCarrito')
+let nPrecio
+let precioTotal = document.getElementById('precioTotal')
+const mensaje = document.getElementById('carritoVacio')
+const ocultar = document.getElementById('ocultarPlantilla')
+const btnVaciar = document.getElementById('btnVaciar')
+
 fetch("./productos.json")
     .then((res) => res.json())
     .then((data) => {
@@ -18,17 +27,12 @@ fetch("./productos.json")
         });
     });
 
-
-let carrito = {}
-
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'))
         actCarrito()
     }
 })
-
-const items = document.getElementById('lista')
 
 items.addEventListener('click', e => {
     addCarrito(e)
@@ -57,17 +61,7 @@ const setCarrito = objCarrito => {
     }
 
     carrito[prodCarrito.id] = { ...prodCarrito }
-
-    console.log(carrito);
 }
-
-
-
-
-const contenedorCarrito = document.getElementById('contenedorCarrito')
-
-let nPrecio
-let precioTotal = document.getElementById('precioTotal')
 
 const actCarrito = () => {
     contenedorCarrito.innerHTML = ""
@@ -85,23 +79,18 @@ const actCarrito = () => {
         contenedorCarrito.appendChild(div)
 
         localStorage.setItem('carrito', JSON.stringify(carrito))
-        nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-        console.log(nPrecio);
+        nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
     })
     precioTotal.innerText = `Precio total --- ${nPrecio}`
-    OcultarMensaje()
+    ocultarMensaje()
 }
 
-const mensaje = document.getElementById('carritoVacio')
-const ocultar = document.getElementById('ocultarPlantilla')
-
-const OcultarMensaje = () => {
+const ocultarMensaje = () => {
     mensaje.className = ('carritoVacio')
     ocultar.className = ('')
 }
 
-const BtnVaciar = document.getElementById('btnVaciar')
-BtnVaciar.addEventListener('click', () => {
+btnVaciar.addEventListener('click', () => {
     carrito = {}
     actCarrito()
     localStorage.removeItem('carrito')
