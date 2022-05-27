@@ -17,7 +17,7 @@ fetch("./productos.json")
                 <img src=${producto.imagen}>
                 <h3>${producto.nombre}</h3>
                 <h2>${producto.precio}</h2>
-                <button id="${producto.id}" class="btn btn-primary">Agregar al carrito</button></span>
+                <button id="${producto.id}" class="btn btn-info">Agregar al carrito</button></span>
             
                
             `;
@@ -72,7 +72,7 @@ const actCarrito = () => {
         div.innerHTML = `
                         <div class="nombreP">${prodCarrito.nombre}</div>
                         <div class="cantidadP">${prodCarrito.cantidad}</div>
-                        <div class="precioP">${prodCarrito.precio * prodCarrito.cantidad}</div>
+                        <div class="precioP">$ ${prodCarrito.precio * prodCarrito.cantidad}</div>
                         
                         
         `
@@ -81,7 +81,9 @@ const actCarrito = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito))
         nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
     })
-    precioTotal.innerText = `Precio total --- ${nPrecio}`
+    precioTotal.innerHTML = `
+                        <div>Precio total</div><div>$ ${nPrecio}</div>
+    `
     ocultarMensaje()
 }
 

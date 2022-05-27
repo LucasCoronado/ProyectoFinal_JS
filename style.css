@@ -1,10 +1,33 @@
 footer img {
   width: 30px;
 }
-
+/* navBar */
 nav div img {
   width: 25px;
 }
+
+nav {
+  box-shadow: 1px 5px 10px #143245;
+  
+}
+nav h1 {
+  text-align: right;
+}
+
+nav a {
+  font-family: "Lato", sans-serif;
+}
+
+.headerColor {
+  background-color: #242F9B;
+}
+
+header img {
+  width: 70px; }
+
+.navColor {
+  color: #ffffff; }
+
 
 /* Productos */
 .tarjetasProductos {
@@ -29,7 +52,7 @@ nav div img {
 
 .tarjetasProductos div {
   margin-bottom: 40px;
-  background-color: white;
+  background-color: rgb(246, 216, 216);
   border-radius: 5px;
   display: flex;
   flex-wrap: nowrap;
@@ -86,16 +109,34 @@ nav div img {
   padding-left: 1rem;
 }
 
+body {
+  background-color: #9BA3EB;
+}
+
+.btn-info {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(246, 216, 216);
+}
 /* Carrito */
+.offcanvas {
+  background-color: #646FD4;
+  
+}
+
+.offcanvas-header h5{
+  font-family: "Lato", sans-serif;
+}
 
 #carrito {
   width: 90%;
-  background-color: aqua;
+  background-color: #9BA3EB;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: flex-start;
+  border-radius: 10px;
+  font-family: "Lato", sans-serif;
 }
 
 #carrito span {
@@ -111,6 +152,10 @@ nav div img {
 
 .estiloCarrito div {
   text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #959eeb;
+  /* border-radius: 10px; */
+  margin-bottom: 2px;
 }
 
 .carritoTitulos {
@@ -153,10 +198,17 @@ nav div img {
 }
 
 #precioTotal {
+  background-color: #8f97e2;
+  border-radius: 10px;
   text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 22px;
 }
 
-#btnFinalizar a{
+a{
   text-decoration: none;
   color: #ffffff;
 }
