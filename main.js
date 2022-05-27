@@ -66,6 +66,9 @@ const setCarrito = objCarrito => {
 
 const contenedorCarrito = document.getElementById('contenedorCarrito')
 
+let nPrecio
+let precioTotal = document.getElementById('precioTotal')
+
 const actCarrito = () => {
     contenedorCarrito.innerHTML = ""
 
@@ -82,8 +85,11 @@ const actCarrito = () => {
         contenedorCarrito.appendChild(div)
 
         localStorage.setItem('carrito', JSON.stringify(carrito))
-        OcultarMensaje()
+        nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+        console.log(nPrecio);
     })
+    precioTotal.innerText = `Precio total --- ${nPrecio}`
+    OcultarMensaje()
 }
 
 const mensaje = document.getElementById('carritoVacio')
@@ -102,6 +108,3 @@ BtnVaciar.addEventListener('click', () => {
     mensaje.className = ('')
     ocultar.className = ('ocultarPlantilla')
 })
-
-
-
