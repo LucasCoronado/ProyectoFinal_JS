@@ -155,3 +155,8 @@ nav div img {
 #precioTotal {
   text-align: center;
 }
+
+#btnFinalizar a{
+  text-decoration: none;
+  color: #ffffff;
+}
