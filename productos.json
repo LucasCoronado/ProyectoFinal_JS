@@ -1,8 +1,18 @@
 [
-    {"nombre": "Remera", "precio": 800, "id": 1, "imagen": "https://picsum.photos/200"},
-    {"nombre": "Pantalon", "precio": 1500, "id": 2, "imagen": "https://picsum.photos/200"},
-    {"nombre": "Campera", "precio": 3000, "id": 3, "imagen": "https://picsum.photos/200"},
-    {"nombre": "Remera", "precio": 800, "id": 4, "imagen": "https://picsum.photos/200"},
-    {"nombre": "Pantalon", "precio": 1500, "id": 5, "imagen": "https://picsum.photos/200"},
-    {"nombre": "Campera", "precio": 3000, "id": 6, "imagen": "https://picsum.photos/200"}
+    {"nombre": "Remera", "precio": 800, "id": 1, "imagen": "./imagenes/remera.jpg"},
+    {"nombre": "Pantalon", "precio": 1500, "id": 2, "imagen": "./imagenes/pantalon.jfif"},
+    {"nombre": "Campera", "precio": 3000, "id": 3, "imagen": "./imagenes/campera.jpg"},
+    {"nombre": "Buzo", "precio": 4000, "id": 4, "imagen": "./imagenes/buzo.webp"},
+    {"nombre": "zapatias", "precio": 8000, "id": 5, "imagen": "./imagenes/zapatillas.jfif"},
+    {"nombre": "Remera", "precio": 800, "id":6, "imagen": "./imagenes/remera.jpg"},
+    {"nombre": "Pantalon", "precio": 1500, "id": 7, "imagen": "./imagenes/pantalon.jfif"},
+    {"nombre": "Campera", "precio": 3000, "id": 8, "imagen": "./imagenes/campera.jpg"},
+    {"nombre": "Buzo", "precio": 4000, "id": 9, "imagen": "./imagenes/buzo.webp"},
+    {"nombre": "zapatias", "precio": 8000, "id": 10, "imagen": "./imagenes/zapatillas.jfif"},
+    {"nombre": "Remera", "precio": 800, "id": 11, "imagen": "./imagenes/remera.jpg"},
+    {"nombre": "Pantalon", "precio": 1500, "id": 12, "imagen": "./imagenes/pantalon.jfif"},
+    {"nombre": "Campera", "precio": 3000, "id": 13, "imagen": "./imagenes/campera.jpg"},
+    {"nombre": "Buzo", "precio": 4000, "id": 14, "imagen": "./imagenes/buzo.webp"},
+    {"nombre": "zapatias", "precio": 8000, "id": 15, "imagen": "./imagenes/zapatillas.jfif"}
+    
 ]
